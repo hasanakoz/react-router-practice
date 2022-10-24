@@ -10,6 +10,8 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import PersonDetail from "./pages/PersonDetail";
 import Aws from "./pages/Aws";
 import FullStack from "./pages/FullStack";
+import PrivateRouter from "./pages/PrivateRouter";
+import Login from "./pages/Login";
 
 function App() {
   return (
@@ -23,9 +25,15 @@ function App() {
           <Route index element={<FullStack />} />
           <Route path="aws" element={<Aws />} />
         </Route>
-        <Route path="/contact" element={<Contact />} />
+
+        <Route path="contact" element={<PrivateRouter />}>
+          <Route path="/contact" element={<Contact />} />
+        </Route>
+
         {/* <Route path="*" element={<NotFound />} /> */}
         <Route path="*" element={<Navigate to="/" />} />
+
+        <Route path="login" element={<Login />} />
       </Routes>
 
       <Footer />
