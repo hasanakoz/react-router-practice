@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const People = () => {
   const [people, setPeople] = useState([]);
@@ -26,7 +26,9 @@ const People = () => {
               key={id}
               className=" col-sm-12 col-md-6 col-lg-4"
               type="button"
-              onClick={() => navigate(`/people/${id}`, { state: person })}
+              // onClick={() => navigate(`/people/${id}`, { state: person })}
+              // onClick={() => navigate(`/people/${id}`)} //absolut path
+              onClick={() => navigate(`${id}`)} //relative path
             >
               <img className="rounded" src={avatar} alt="img" />
               <h6>
