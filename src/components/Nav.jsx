@@ -49,7 +49,7 @@ function Nav() {
                 style={({ isActive }) => ({
                   color: isActive && "red",
                 })}
-                to="/paths"
+                to="/path"
                 className="nav-link"
                 aria-current="page"
               >
